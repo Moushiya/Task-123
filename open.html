@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Data</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<table>
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Country</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody id="user-data">
+  </tbody>
+</table>
+
+<script>
+  const userData = [
+    {
+      "UserID": 1,
+      "UserName": "rooter",
+      "Password": "12345",
+      "Country": "UK",
+      "Email": "sac@gmail.com"
+    },
+    {
+      "UserID": 2,
+      "UserName": "binu",
+      "Password": "123",
+      "Country": "uk",
+      "Email": "Binu@gmail.com"
+    },
+    {
+      "UserID": 3,
+      "UserName": "cal",
+      "Password": "123",
+      "Country": "uk",
+      "Email": "cal@gmail.com"
+    },
+    {
+      "UserID": 4,
+      "UserName": "nera",
+      "Password": "1234",
+      "Country": "uk",
+      "Email": "nera@gmail.com"
+    }
+  ];
+
+  const userDataEl = document.getElementById("user-data");
+  for (let i = 0; i < userData.length; i++) {
+    const user = userData[i];
+    const tr = document.createElement("tr");
+    const tdUserID = document.createElement("td");
+    const tdUserName = document.createElement("td");
+    const tdPassword = document.createElement("td");
+    const tdCountry = document.createElement("td");
+    const tdEmail = document.createElement("td");
+    tdUserID.innerText = user.UserID;
+    tdUserName.innerText = user.UserName;
+    tdPassword.innerText = user.Password;
+    tdCountry.innerText = user.Country;
+    tdEmail.innerText = user.Email;
+    tr.appendChild(tdUserID);
+    tr.appendChild(tdUserName);
+    tr.appendChild(tdPassword);
+    tr.appendChild(tdCountry);
+    tr.appendChild(tdEmail);
+    userDataEl.appendChild(tr);
+  }
+</script>
+
+</body>
+</html>
